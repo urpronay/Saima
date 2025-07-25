@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smile Saima 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ffc1cc, #ffe5ec, #fff);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d63384;
+      animation: popUp 1.5s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #555;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    @keyframes popUp {
+      0% {transform: scale(0);}
+      100% {transform: scale(1);}
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+      background-size: contain;
+      animation: float 5s infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .message-box {
+      background: #fff0f5;
+      border-radius: 15px;
+      padding: 30px;
+      display: inline-block;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    audio {
+      display: none;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 1em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey Saima! 💕</h1>
+    <div class="message-box">
+      <p>যদি মন খারাপ থাকে, তাহলে একটু হেসো 🥺<br>তোমার হাসিই আমার পৃথিবী।<br><br>তুমি অসাধারণ, ইউনিক, আর আমার জন্য স্পেশাল! 🌸</p>
+      <p>তোমার মন খারাপ মানেই, এই পৃথিবীটা একটু নিষ্প্রাণ 🥺<br>তাই প্লিজ একটু হেসো, আমার জন্য! 😊</p>
+    </div>
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="footer">With 💖 by Someone who cares about you!</div>
+
+  <script>
+    // Heart Animation Script
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.getElementById("hearts").appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
